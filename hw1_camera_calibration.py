@@ -179,12 +179,11 @@ if np.all(eigvalsB>0):
     print("Calculating SVD")
 else:
     B = -B
-#
-#print(B)
+
 U = np.linalg.cholesky(B).T #B = LL* = LU = (invK)*(invK) => U = invK
 K = np.linalg.inv(U) #K = invU
 K /= K[2, 2]
-#print(K)
+
 inv_K = np.linalg.inv(K)
 
 
@@ -210,7 +209,7 @@ for i in range(len(objpoints)):
     
     Rot[i] = Rot_
     Tra[i] = t
-#print(Rot)
+
 
 # ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(objpoints, imgpoints, img_size,None,None)
 # Vr = np.array(rvecs)
